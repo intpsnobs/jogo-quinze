@@ -25,26 +25,29 @@ const userSchema = new mongoose.Schema({
     }
 })
 
-userSchema.pre('save', () => {
+userSchema.pre('save', function(next) {
     let user = this;
-    if (!user.isModified('password')) return next();
     bcrypt.genSalt(SALT_WORK_FACTOR, (err, salt) => {
         if (err) return next(err);
-
+        console.log(user);
         bcrypt.hash(user.password, salt, (err, hash) => {
             if (err) return next(err);
-
             user.password = hash;
             next();
         });
     });
 });
 
-userSchema.methods.comparePassword = (password, cb) => {
-    bcrypt.compare(password, this.password, (err, match) => {
+userSchema.statics.authenticate = function(data, cb) {
+    User.findOne({username: data.username}).exec((err, user) => {
         if (err) return cb(err);
-        cb(null, match);
+        if (user == null) return cb(new Error('User Not Found'));
+        bcrypt.compare(data.password, user.password, (err, match) => {
+            if (err) return cb(err);
+            return cb(null, match);
+        });
     });
+
 }
 
 const User = mongoose.model("User", userSchema) // creating the model from the schema
