@@ -2,7 +2,7 @@
 <h1>Fifteen Puzzle</h1>
 <html>
 
-    <head class"head-login">
+    <head class="head-login">
       <div class="form-box">
         <div class="botao-box">
           <div id= "botao"></div>
@@ -10,7 +10,7 @@
           <button id = "box_form_register" type="button" class="toggle" onClick="register()">Register</button>
           </div>
 
-            <form class = "input" id = "login" action="" method="POST">
+            <form class = "input" id = "login" action="localhost:3000/login" method="POST">
               Username:<br> <input type="text" name="username" value=""><br>
               Password:<br> <input type="password" name="password" value=""><br>
               <input type="submit" name="Bs_login" value="Logar">
@@ -18,8 +18,8 @@
               <button type="button" name="">Jogar Sem Conta</button>
             </form>
 
-            <form class = "input" id ="register" action="" method="post">
-              Username:<br>  <input type="text" name"username" value""><br>
+            <form class = "input" id ="register" action="localhost:3000/register" method="post">
+              Username:<br>  <input type="text" name="username" value=""><br>
               Nome:<br> <input type="text" name="name" value=""><br>
               E-mail:<br> <input type="email" name="email" value=""><br>
               Password:<br>  <input type="password" name="password" value=""><br>
@@ -30,7 +30,7 @@
 
 
 
-        <head class"head-game">
+        <head class="head-game">
             <link href="estilos.css" rel="stylesheet">
             <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
             <script src="jogo.js"></script>
@@ -63,15 +63,13 @@
 
         <script>
         var x = document.getElementById("login");
-        var y =  document.getElementById("register");
+        var y = document.getElementById("register");
         function login() {
-
           x.style.left = "0px";
           y.style.left = "300px";
         }
 
         function register() {
-
           x.style.left = "300px";
           y.style.left = "0px";
         }
