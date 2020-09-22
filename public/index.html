@@ -15,7 +15,7 @@
               Password:<br> <input type="password" name="password" value=""><br>
               <input type="submit" name="Bs_login" value="Logar">
               <input type="reset" name="" value="Reset"><br><br><br>
-              <button type="button" name="">Jogar Sem Conta</button>
+              <button type="button" onclick="liberar_game()" name="">Jogar Sem Conta</button>
             </form>
 
             <form class = "input" id ="register" action="localhost:3000/register" method="post">
@@ -105,6 +105,9 @@
         var z = document.getElementById("btns");
         var w = document.getElementById("btnss");
 
+        var ctls = document.getElementById("controls");
+        var puzz = document.getElementById("puzzlearea");
+
         function login() {
           x.style.left = "0px";
           y.style.left = "300px";
@@ -115,6 +118,13 @@
           x.style.left = "300px";
           y.style.left = "0px";
           z.style.left = "150px";
+
+        }
+
+        function liberar_game(){
+          ctls.style.visibility = "visible";
+          puzz.style.visibility = "visible";
+
         }
 
         function tableScore(){

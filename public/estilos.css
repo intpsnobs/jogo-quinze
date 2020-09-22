@@ -12,6 +12,7 @@ body, #shuffle{
 	height:400px;
 	position:relative;
 	margin:0px auto;
+	visibility: hidden;
 }
 .piece{
 	width:90px;
@@ -25,6 +26,10 @@ body, #shuffle{
 #winner{
 	color:red;
 	font-weight:bold;
+}
+
+#controls{
+		visibility: hidden;
 }
 
 .form-box{
