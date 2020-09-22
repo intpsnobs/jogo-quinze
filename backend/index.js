@@ -6,7 +6,7 @@ const cors = require("cors")
 const router = require('./routes/router')
 const db = require('./models')
 
-const PORT = process.env.PORT || 3000 // port that the server is running on => localhost:3000
+const PORT = process.env.PORT || 3333 // port that the server is running on => localhost:3000
 
 app.use(express.json()) // telling the app that we are going to use json to handle incoming payload
 app.use(cors());
