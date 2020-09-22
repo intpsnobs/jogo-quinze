@@ -5,7 +5,7 @@
     <head class="head-login">
       <div class="form-box">
         <div class="botao-box">
-          <div id= "botao"></div>
+          <div id="btns"></div>
           <button id = "box_form_login" type="button" class="toggle" onclick="login()">Log In</button>
           <button id = "box_form_register" type="button" class="toggle" onClick="register()">Register</button>
           </div>
@@ -61,18 +61,80 @@
 
 
 
+        <div class="center">
+          <header >
+            <h1 class="rankcss">Ranking</h1>
+            <h2>
+              <div class="botao-box2">
+                <div id="btnss"></div>
+                <button id = "b_rank_score" type="button" class="toggle2" onclick="tableScore()">By Score</button>
+                <button id = "b_rank_moves" type="button" class="toggle2" onClick="tableMoves()">By Moves</button>
+                <button id = "b_rank_time" type="button" class="toggle2" onClick="tableTime()">By Time</button>
+              </div>
+            </h2>
+
+          </header>
+
+
+          <div>
+        	  <table>
+        			<tr>
+                <th>Name</th>
+        				<th>Score</th>
+                <th>Moves</th>
+                <th>Time</th>
+              </tr>
+        			<tr>
+                <td class="t_name"> Michael</td>
+                <td class="t_score">100</td>
+                <td class="t_moves">15</td>
+                <td class="t_time">16</td>
+              </tr>
+
+
+            </table>
+          </div>
+        </div>
+
+
+
+
         <script>
         var x = document.getElementById("login");
         var y = document.getElementById("register");
+        var z = document.getElementById("btns");
+        var w = document.getElementById("btnss");
+
         function login() {
           x.style.left = "0px";
           y.style.left = "300px";
+          z.style.left = "0px";
         }
 
         function register() {
           x.style.left = "300px";
           y.style.left = "0px";
+          z.style.left = "150px";
         }
+
+        function tableScore(){
+          w.style.left = "740px";
+        }
+        function tableMoves(){
+          w.style.left = "890px";
+        }
+        function tableTime(){
+          w.style.left = "1040px";
+        }
+
+
+        function rank(rank) {
+          alert('Rank: ' + rank.innerHTML)
+        }
+        function name(name) {
+
+        }
+
 
         </script>
 

@@ -52,10 +52,118 @@ body, #shuffle{
 	width: 280px
 
 }
+
+.botao-box2{
+	top: 10px;
+	position: absolute;
+	width: 600px
+
+}
+
 .head-login{
 	vertical-align: top;
 	text-align: left;
 }
 #register{
 	left:300px;
+}
+.toggle{
+	padding: 10px 30px;
+	top: -10px;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	outline: none;
+	position: relative;
+	font-family: 'Cinzel', serif;
+	font-size:12pt;
+
+}
+
+.toggle2{
+	padding: 10px 30px;
+	top: 1080px;
+	left: 640;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	outline: none;
+	position: relative;
+	font-family: 'Cinzel', serif;
+	font-size:12pt;
+}
+
+#btns{
+	top: -10px;
+	left: 0;
+	position: absolute;
+	width: 110px;
+	height: 100%;
+	background-image: linear-gradient(red, yellow, blue);
+	border-radius: 30px;
+	transition: .5s;
+
+}
+
+#btnss{
+	top: 1080px;
+	left: 740;
+	position: absolute;
+	width: 110px;
+	height: 100%;
+	background-image: linear-gradient(red, yellow, blue);
+	border-radius: 30px;
+	transition: .5s;
+
+}
+
+
+.center
+{
+	position: center;
+}
+.rankcss{
+	position: relative;
+	top: 00px;
+	left: : 400px
+}
+h1 {
+  text-align: center;
+	line-height:;
+
+}
+table{
+	border-collapse: collapse;
+	position: relative;
+	top:  200px;
+	left: 700;
+}
+th,td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+    width: 20%;
+}
+td
+{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 20px;
+}
+tr {
+  background-color: #fff;
+}
+tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+tr:hover {
+  background-color: transparent;
+  color: #fff;
 }
