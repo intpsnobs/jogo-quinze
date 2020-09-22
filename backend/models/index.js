@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 
-mongoose.connect("mongodb+srv://admin:2rdFf8ymNEv85AKz@odaw-0.o61h5.gcp.mongodb.net/odaw-0?retryWrites=true&w=majority", {
+mongoose.connect(process.env.DB_URL, {
   // connecting to the mongodb database name: "todo-app" locally
   keepAlive: true, // keeping the connection alive
   useNewUrlParser: true,
