@@ -1,0 +1,148 @@
+<html>
+<h1>Fifteen Puzzle</h1>
+<head class="head-login">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+    <div class="form-box">
+        <div class="botao-box">
+            <div id="btns"></div>
+            <button id = "box_form_login" type="button" class="toggle" onclick="login()">Log In</button>
+            <button id = "box_form_register" type="button" class="toggle" onClick="register()">Register</button>
+        </div>
+        
+        <form class = "input" id = "login" action="http://localhost:3333/login" method="POST">
+            Username:<br> <input type="text" name="username" value=""><br>
+            Password:<br> <input type="password" name="password" value=""><br>
+            <input type="submit" name="Bs_login" value="Logar">
+            <input type="reset" name="" value="Reset"><br><br><br>
+            <button type="button" onclick="liberar_game()" name="">Jogar Sem Conta</button>
+        </form>
+        
+        <form class = "input" id ="register" action="http://localhost:3333/register" method="POST">
+            Username:<br>  <input type="text" name="username" value=""><br>
+            Nome:<br> <input type="text" name="name" value=""><br>
+            E-mail:<br> <input type="email" name="email" value=""><br>
+            Password:<br>  <input type="password" name="password" value=""><br>
+            <input type="submit" name="Bs_register" value="Cadastrar">
+            <input type="reset" name="" value="Reset">
+        </form>
+    </div>
+    
+    
+    
+    <head class="head-game">
+        <link href="http://localhost:3333/css/estilos.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+        <script src="http://localhost:3333/js/jogo.js"></script>
+        <p>
+            Hit the shuffle button, then solve the puzzle by moving the tiles until they're in numerical order.
+        </p>
+        
+        <div id="puzzlearea"></div>
+        
+        <p id="controls">
+            Background Image:
+            <select id="background">
+                <option value='https://i.imgur.com/eMloI7C.jpg'>#1</option>
+                <option value='https://i.imgur.com/EaWfw2s.jpg'>#2</option>
+                <option value='https://i.imgur.com/oHZFfNO.jpg'>#3</option>
+                <option value="https://i.imgur.com/CNhnRs2.jpg">#4</option>
+            </select>
+            <button id="shuffle" >Shuffle</button>
+        </p>
+        <div id = "winCount"></div>
+        <div id="winner"></div>
+        
+        <a href='https://en.wikipedia.org/wiki/15_puzzle' target='_blank'>
+            15 puzzle wikipedia page
+        </a>
+    </head>
+    
+    <div class="center">
+        <header >
+            <h1 class="rankcss">Ranking</h1>
+            <h2>
+                <div class="botao-box2">
+                    <div id="btnss"></div>
+                    <button id = "b_rank_score" type="button" class="toggle2" onclick="tableScore()">By Score</button>
+                    <button id = "b_rank_moves" type="button" class="toggle2" onClick="tableMoves()">By Moves</button>
+                    <button id = "b_rank_time" type="button" class="toggle2" onClick="tableTime()">By Time</button>
+                </div>
+            </h2>
+            
+        </header>
+        
+        
+        <div>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Score</th>
+                    <th>Moves</th>
+                    <th>Time</th>
+                </tr>
+                <tr>
+                    <td class="t_name"> Michael</td>
+                    <td class="t_score">100</td>
+                    <td class="t_moves">15</td>
+                    <td class="t_time">16</td>
+                </tr>
+                
+                
+            </table>
+        </div>
+    </div>
+    
+    
+    
+    
+    <script>
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btns");
+        var w = document.getElementById("btnss");
+        
+        var ctls = document.getElementById("controls");
+        var puzz = document.getElementById("puzzlearea");
+        
+        function login() {
+            x.style.left = "0px";
+            y.style.left = "300px";
+            z.style.left = "0px";
+        }
+        
+        function register() {
+            x.style.left = "300px";
+            y.style.left = "0px";
+            z.style.left = "150px";
+            
+        }
+        
+        function liberar_game(){
+            ctls.style.visibility = "visible";
+            puzz.style.visibility = "visible";
+            
+        }
+        
+        function tableScore(){
+            w.style.left = "740px";
+        }
+        function tableMoves(){
+            w.style.left = "890px";
+        }
+        function tableTime(){
+            w.style.left = "1040px";
+        }
+        
+        
+        function rank(rank) {
+            alert('Rank: ' + rank.innerHTML)
+        }
+        function name(name) {
+            
+        }
+        
+        
+    </script>
+    
+</head>
+</html>
