@@ -1,33 +1,6 @@
 <html>
 <p id='err'></p>
 <h1>Fifteen Puzzle</h1>
-<head class="head-login" >
-    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
-    <div class="form-box">
-        <div class="botao-box">
-            <div id="btns"></div>
-            <button id = "box_form_login" type="button" class="toggle" onclick=slide_login()>Log In</button>
-            <button id = "box_form_register" type="button" class="toggle" onClick=slide_register()>Register</button>
-        </div>
-
-        <script src="http://localhost:3333/js/authenticate.js"></script>
-        <div class = "input" id = "login">
-            Username:<br> <input type="text" name="username"><br>
-            Password:<br> <input type="password" name="password"><br>
-            <button onclick=authenticate()>Logar</button>
-            <button type="reset" value="Reset">Limpar</button><br><br><br>
-            <button type="button" onclick="liberar_game()" name="">Jogar Sem Conta</button>
-        </div>
-        <script src="http://localhost:3333/js/register.js"></script>
-        <div class = "input" id ="register">
-            Username:<br>  <input id="reg-uname" type="text" name="username"/><br>
-            Nome:<br> <input id="reg-name" type="text" name="name"/><br>
-            E-mail:<br> <input id="reg-email" type="email" name="email"/><br>
-            Password:<br>  <input id="reg-pass" type="password" name="password"/><br>
-            <button name="Cadastrar" onclick=register()>Cadastrar</button>
-            <button type="reset" value="Reset">Limpar</button>
-        </div>
-    </div>
 
     <head class="head-game">
         <link href="http://localhost:3333/css/estilos.css" rel="stylesheet">
@@ -56,7 +29,7 @@
             15 puzzle wikipedia page
         </a>
     </head>
-    
+    <body>
     <div class="center">
         <header >
             <h1 class="rankcss">Ranking</h1>
@@ -91,10 +64,7 @@
             </table>
         </div>
     </div>
-    
-    
-    
-    
+
     <script>
         var x = document.getElementById("login");
         var y = document.getElementById("register");
@@ -103,8 +73,7 @@
         
         var ctls = document.getElementById("controls");
         var puzz = document.getElementById("puzzlearea");
-
-        
+  
         function liberar_game(){
             ctls.style.visibility = "visible";
             puzz.style.visibility = "visible";
@@ -129,8 +98,7 @@
             
         }
         
-        
     </script>
-    
-</head>
+    <img src onerror=liberar_game()>
+    </body>
 </html>

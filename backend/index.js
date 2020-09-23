@@ -12,7 +12,8 @@ app.use(express.json()) // telling the app that we are going to use json to hand
 app.use(cors());
 app.use('/js/', express.static('public/scripts'))
 app.use('/css/', express.static('public/styles'))
-app.use('/', express.static('public/views'))
+
+// app.use('/', express.static('public/views'))
 
 // app.get('/', async (req, res, next) => {
 //     res.sendFile(path.resolve(__dirname, 'index.html'));
