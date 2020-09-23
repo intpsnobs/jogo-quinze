@@ -8,14 +8,16 @@
 	var worker;
 	window.onload = startup;
 
+	var tempo_complete;
 	var seconds = 00;
 	var tens = 00;
-	var appendTens = document.getElementById("tens");
+	//var appendTens = document.getElementById("tens");
 	var appendSeconds = document.getElementById("seconds");
 	var contador_jogadas_html = document.getElementById("contador_jogadas");
 	var contador_jogadas = 0;
 	var Interval;
 
+	var score;
 	function startTimer () {
 
 
@@ -32,7 +34,7 @@
 	    seconds++;
 	    appendSeconds.innerHTML = "0" + seconds;
 	    tens = 0;
-	    appendTens.innerHTML = "0" + 0;
+	    //appendTens.innerHTML = "0" + 0;
 	  }
 	  if (seconds > 9){
 	    appendSeconds.innerHTML = seconds;
@@ -160,8 +162,13 @@
 	//function used to shuffle the puzzle pieces
 	function boardShuffle(){
 
+		//variaveis do cronmetro
+		seconds = 00;
+		tens = 00;
 		clearInterval(Interval);
 		Interval = setInterval(startTimer, 10);
+
+
 		//clears win text if displayed
 		document.getElementById("winner").innerHTML = "";
 		//disables solved message in the event the puzzle is solved while shuffling
@@ -210,7 +217,13 @@
 		}
 		//if the puzzle is complete, the win message is displayed, and the number of wins is increased by one and added to local storage
 		if (complete == PUZZ_SIZE){
-			document.getElementById("winner").innerHTML = "Winner, Winner, Chicken Dinner!! Congratulations, You Won!";
+			//para cronmetro
+			tempo_complete = seconds; // tempo para completar
+			score = (1000/(contador_jogadas+20)) + (1000/(tempo_complete+80));
+			clearInterval(Interval);
+
+
+			document.getElementById("winner").innerHTML = "Congratulations, You Won!";
 			var wins = localStorage["winCount"];
 			wins++;
 			localStorage["winCount"] = wins;

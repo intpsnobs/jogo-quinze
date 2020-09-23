@@ -1,3 +1,5 @@
+
+
 <html>
 <p id='err'></p>
 <h1>Fifteen Puzzle</h1>
@@ -6,8 +8,8 @@
     <div class="form-box">
         <div class="botao-box">
             <div id="btns"></div>
-            <button id = "box_form_login" type="button" class="toggle" onclick=slide_login()>Log In</button>
-            <button id = "box_form_register" type="button" class="toggle" onClick=slide_register()>Register</button>
+            <button id = "box_form_login" type="button" class="toggle" onclick="slide_login()">Log In</button>
+            <button id = "box_form_register" type="button" class="toggle" onclick="slide_register()">Register</button>
         </div>
 
         <script src="http://localhost:3333/js/authenticate.js"></script>
@@ -28,11 +30,6 @@
             <button type="reset" value="Reset">Limpar</button>
         </div>
     </div>
-
-
-
-
-
 
     <head class="head-game">
 
@@ -108,7 +105,6 @@
 
 
 
-
     <script>
         var x = document.getElementById("login");
         var y = document.getElementById("register");
@@ -118,6 +114,18 @@
         var ctls = document.getElementById("controls");
         var puzz = document.getElementById("puzzlearea");
 
+        function slide_login(){
+          x.style.left = "0px";
+          y.style.left = "300px";
+          z.style.left = "0px";
+        }
+
+        function slide_register(){
+          x.style.left = "300px";
+          y.style.left = "0px";
+          z.style.left = "150px";
+
+        }
 
         function liberar_game(){
             ctls.style.visibility = "visible";
@@ -126,13 +134,13 @@
         }
 
         function tableScore(){
-            w.style.left = "740px";
+            w.style.left = "620px";
         }
         function tableMoves(){
-            w.style.left = "890px";
+            w.style.left = "770px";
         }
         function tableTime(){
-            w.style.left = "1040px";
+            w.style.left = "900px";
         }
 
 
@@ -145,6 +153,9 @@
 
 
     </script>
+
+
+
 
 </head>
 </html>
