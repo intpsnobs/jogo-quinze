@@ -5,7 +5,43 @@
 	var emptyX = 0;
 	var emptyY = 0;
 	var solvable = true;
+	var worker;
 	window.onload = startup;
+
+	var seconds = 00;
+	var tens = 00;
+	var appendTens = document.getElementById("tens");
+	var appendSeconds = document.getElementById("seconds");
+	var contador_jogadas_html = document.getElementById("contador_jogadas");
+	var contador_jogadas = 0;
+	var Interval;
+
+	function startTimer () {
+
+
+
+	  tens++;
+
+	  if(tens < 9){
+	   // appendTens.innerHTML = "0" + tens;
+	  }
+	  if (tens > 9){
+	    //appendTens.innerHTML = tens;
+	  }
+	  if (tens > 99) {
+	    seconds++;
+	    appendSeconds.innerHTML = "0" + seconds;
+	    tens = 0;
+	    appendTens.innerHTML = "0" + 0;
+	  }
+	  if (seconds > 9){
+	    appendSeconds.innerHTML = seconds;
+	  }
+	}
+	return seconds,tens;
+
+
+
 	//function called on load to create the puzzle board and add functionality to the pieces and shuffle button
 	function startup(){
 		createPieces();
@@ -13,6 +49,9 @@
 		returnBG();
 		shuffleButton();
 		winCounter();
+
+
+
 	}
 	//function used to create the pieces of the puzzle,add CSS elements to each piece, and add functionality to them
 	function createPieces(){
@@ -64,6 +103,9 @@
 			//assigns X & Y values of moved piece to empty X & Y values
 			emptyX = tempX;
 			emptyY = tempY;
+			//contador
+			contador_jogadas++;
+			contador_jogadas_html.innerHTML = contador_jogadas;
 			//checks to see if the puzzzle is solved as long as it is not being shuffled
 			if (solvable === true){
 				checkSolved();
@@ -79,6 +121,7 @@
 	}
 	//function assigned to each piece's mouse up listener to call the move piece function
 	function makeMovable(){
+
 		movePiece(this);
 	}
 	//function to restore the black border and cursor when the mouse leaves the piece, also makes the piece non movable to prevent illegal moves
@@ -116,6 +159,9 @@
 	}
 	//function used to shuffle the puzzle pieces
 	function boardShuffle(){
+
+		clearInterval(Interval);
+		Interval = setInterval(startTimer, 10);
 		//clears win text if displayed
 		document.getElementById("winner").innerHTML = "";
 		//disables solved message in the event the puzzle is solved while shuffling
@@ -134,6 +180,8 @@
 			movePiece(neighbors[sP]);
 			neighbors[sP].value = false;
 		}
+		contador_jogadas = 0;
+		contador_jogadas_html.innerHTML = contador_jogadas;
 		//enables win conditions again once shuffle is complete
 		solvable = true;
 	}

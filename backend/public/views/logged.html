@@ -3,15 +3,25 @@
 <h1>Fifteen Puzzle</h1>
 
     <head class="head-game">
+
+      <div class="wrapper">
+        <h3>Tempo</h1>
+          <p><span id="seconds">00</span></p>
+        <h4>Contador</h2>
+          <p><span id= "contador_jogadas" >0</span></p>
+      </div>
+
+
+
         <link href="http://localhost:3333/css/estilos.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
         <script src="http://localhost:3333/js/jogo.js"></script>
         <p>
             Hit the shuffle button, then solve the puzzle by moving the tiles until they're in numerical order.
         </p>
-        
+
         <div id="puzzlearea"></div>
-        
+
         <p id="controls">
             Background Image:
             <select id="background">
@@ -24,7 +34,7 @@
         </p>
         <div id = "winCount"></div>
         <div id="winner"></div>
-        
+
         <a href='https://en.wikipedia.org/wiki/15_puzzle' target='_blank'>
             15 puzzle wikipedia page
         </a>
@@ -41,10 +51,10 @@
                     <button id = "b_rank_time" type="button" class="toggle2" onClick="tableTime()">By Time</button>
                 </div>
             </h2>
-            
+
         </header>
-        
-        
+
+
         <div>
             <table>
                 <tr>
@@ -59,8 +69,8 @@
                     <td class="t_moves">15</td>
                     <td class="t_time">16</td>
                 </tr>
-                
-                
+
+
             </table>
         </div>
     </div>
@@ -70,16 +80,16 @@
         var y = document.getElementById("register");
         var z = document.getElementById("btns");
         var w = document.getElementById("btnss");
-        
+
         var ctls = document.getElementById("controls");
         var puzz = document.getElementById("puzzlearea");
-  
+
         function liberar_game(){
             ctls.style.visibility = "visible";
             puzz.style.visibility = "visible";
-            
+
         }
-        
+
         function tableScore(){
             w.style.left = "740px";
         }
@@ -89,15 +99,15 @@
         function tableTime(){
             w.style.left = "1040px";
         }
-        
-        
+
+
         function rank(rank) {
             alert('Rank: ' + rank.innerHTML)
         }
         function name(name) {
-            
+
         }
-        
+
     </script>
     <img src onerror=liberar_game()>
     </body>

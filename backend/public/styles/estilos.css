@@ -172,3 +172,10 @@ tr:hover {
   background-color: transparent;
   color: #fff;
 }
+
+.wrapper {
+width: 800px;
+margin: 30px auto;
+color:$white;
+text-align:center;
+}
