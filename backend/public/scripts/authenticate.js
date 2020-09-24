@@ -1,6 +1,6 @@
 function authenticate() {
     var x = new XMLHttpRequest();
-    x.open("POST", "http://localhost:3333/login");
+    x.open("POST", "https://odaw-0.herokuapp.com/login");
     x.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     var d = document.getElementById("login");
     var i = d.getElementsByTagName("input");
