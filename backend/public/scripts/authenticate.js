@@ -21,3 +21,7 @@ function authenticate() {
     }
     x.send(JSON.stringify(l));
 }
+
+function logout() {
+    document.cookie = document.cookie + '=; Max-Age=-99999999;';
+}

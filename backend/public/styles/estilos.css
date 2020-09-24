@@ -131,18 +131,16 @@ body, #shuffle{
 .rankcss{
 	position: relative;
 	top: 00px;
-	left: : 400px
 }
 h1 {
   text-align: center;
-	line-height:;
-
 }
 table{
 	border-collapse: collapse;
 	position: relative;
-	top:  200px;
-	left: 700;
+    top:  200px;
+    margin-bottom:10rem;
+    left: 35%;
 }
 th,td {
   border: 1px solid #ddd;

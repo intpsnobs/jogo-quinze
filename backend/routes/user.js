@@ -24,6 +24,7 @@ router.post('/register', async (req, res, next) => {
 router.get('/', (req, res, next) => {
     try {
         token = req.headers.cookie.split("=")[1];
+        console.log(token);
         if (token) {
             console.log(token);
             db.User.findByToken(token, (err, user) => {
