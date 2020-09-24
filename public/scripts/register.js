@@ -1,6 +1,6 @@
 function register() {
     var x = new XMLHttpRequest();
-    x.open("POST", "http://localhost:3333/register");
+    x.open("POST", "https://odaw-0.herokuapp.com/register");
     x.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     var d = document.getElementById("register");
     var i = d.getElementsByTagName("input");
